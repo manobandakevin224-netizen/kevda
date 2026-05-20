@@ -1,0 +1,430 @@
+
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#050505;
+    color:white;
+    font-family:'Poppins',sans-serif;
+}
+#bg-video{
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:-1;
+}
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    z-index:1000;
+    backdrop-filter:blur(10px);
+    background:rgba(0,0,0,0.4);
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 70px;
+}
+
+.logo{
+    color:#d9a76d;
+    font-size:20px;
+}
+
+nav ul{
+    display:flex;
+    gap:35px;
+    list-style:none;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    font-size:12px;
+    letter-spacing:2px;
+}
+
+.music-btn{
+    background:transparent;
+    border:1px solid #c89d6d;
+    color:#f2d0a5;
+    padding:10px 18px;
+    border-radius:30px;
+    font-size:11px;
+    cursor:pointer;
+}
+
+.hero{
+    height:100vh;
+    background:url('WhatsApp Image 2026-05-19 at 5.39.31 PM (1).jpeg') center/cover;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.55);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:700px;
+    padding:20px;
+}
+
+.subtitle{
+    letter-spacing:3px;
+    font-size:12px;
+    margin-bottom:20px;
+    color:#d4b08a;
+}
+
+.hero h1{
+    font-family:'Cormorant Garamond',serif;
+    font-size:90px;
+    line-height:0.9;
+    font-weight:600;
+}
+
+.hero h1 span{
+    font-style:italic;
+    font-weight:300;
+}
+
+.description{
+    margin-top:25px;
+    font-size:14px;
+    color:#ddd;
+    line-height:1.8;
+}
+
+.poema{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:80px;
+    padding:120px 10%;
+}
+
+.poema-text{
+    max-width:500px;
+}
+
+.mini{
+    color:#d4b08a;
+    letter-spacing:2px;
+    font-size:12px;
+    margin-bottom:20px;
+}
+
+.poema h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:60px;
+    margin-bottom:25px;
+    font-weight:500;
+}
+
+.poema p{
+    color:#cfcfcf;
+    line-height:1.9;
+}
+
+.poema-image img{
+    width:420px;
+    border-radius:20px;
+}
+
+.gallery{
+    padding:120px 10%;
+    text-align:center;
+}
+
+.gallery h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:55px;
+    margin-bottom:50px;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.gallery-grid img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    border-radius:15px;
+    transition:0.4s;
+}
+
+.gallery-grid img:hover{
+    transform:scale(1.04);
+}
+
+.fecha{
+    padding:120px 10%;
+}
+
+.fecha-card{
+    background:#111;
+    border-radius:25px;
+    padding:50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:50px;
+}
+
+.fecha-card h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:50px;
+    margin-bottom:20px;
+}
+
+.texto{
+    margin-top:20px;
+    color:#ccc;
+    line-height:1.8;
+}
+
+.calendar{
+    background:#0b0b0b;
+    padding:25px;
+    border-radius:20px;
+    min-width:260px;
+}
+
+.month{
+    text-align:center;
+    margin-bottom:20px;
+    color:#d4b08a;
+    letter-spacing:2px;
+}
+
+.days{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:12px;
+}
+
+.days span{
+    text-align:center;
+    padding:10px;
+    border-radius:50%;
+    color:#ddd;
+}
+
+.days .active{
+    background:#d4b08a;
+    color:black;
+    font-weight:bold;
+}
+
+@media(max-width:900px){
+
+    nav{
+        padding:20px;
+    }
+
+    nav ul{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:60px;
+    }
+
+    .poema{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .poema-image img{
+        width:100%;
+    }
+
+    .fecha-card{
+        flex-direction:column;
+    }
+}
+
+section{
+    opacity:0;
+    transform:translateY(60px);
+    transition:1s;
+}
+
+section.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.heart{
+    position:fixed;
+    top:-10px;
+    color:#ff4d6d;
+    font-size:20px;
+    animation:float linear forwards;
+    z-index:9999;
+}
+
+@keyframes float{
+
+    to{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+}
+
+.contador{
+
+    margin:120px auto;
+    width:85%;
+    background:#0d0d0d;
+    border-radius:30px;
+    padding:80px 40px;
+    text-align:center;
+    border:1px solid rgba(255,255,255,0.05);
+}
+
+.contador-mini{
+
+    color:#d8ab6d;
+    letter-spacing:3px;
+    font-size:12px;
+    margin-bottom:60px;
+}
+
+.contador-grid{
+
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:20px;
+}
+
+.contador-grid h2{
+
+    font-family:'Cormorant Garamond',serif;
+    font-size:65px;
+    color:#efc287;
+    font-weight:500;
+}
+
+.contador-grid span{
+
+    color:#d7d7d7;
+    font-size:14px;
+    letter-spacing:2px;
+}
+
+.contador-text{
+
+    margin-top:60px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:35px;
+    color:#ddd;
+    font-style:italic;
+}
+
+.heart-bottom{
+
+    margin-top:25px;
+    color:#efc287;
+    font-size:25px;
+}
+
+@media(max-width:900px){
+
+    .contador-grid{
+
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .contador-grid h2{
+
+        font-size:45px;
+    }
+}
+
+
+.frase{
+
+    position:relative;
+    min-height:100vh;
+
+    background:url('fondo-romantico.jpg') center/cover;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+
+    overflow:hidden;
+}
+
+.frase-overlay{
+
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.55);
+}
+
+.frase-content{
+
+    position:relative;
+    z-index:2;
+    max-width:1000px;
+    padding:20px;
+}
+
+.frase-mini{
+
+    color:#efc287;
+    letter-spacing:3px;
+    font-size:12px;
+    margin-bottom:40px;
+}
+
+.frase h2{
+
+    font-family:'Cormorant Garamond',serif;
+    font-size:85px;
+    line-height:0.95;
+    font-style:italic;
+    font-weight:500;
+}
+
+.frase-heart{
+
+    margin-top:40px;
+    color:#efc287;
+    font-size:30px;
+}
+
+@media(max-width:900px){
+
+    .frase h2{
+
+        font-size:50px;
+    }
+}
